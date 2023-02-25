@@ -12,7 +12,7 @@ class GamesViewController: UIViewController {
     // MARK: - GUI Variables
     
     let myTableView = UITableView()
-    let data = ["Chess", "Domino", "Go", "Backgammon"]
+    let data = ["Chess", "Domino", "Go", "Backgammon", "Sudoku"]
     
     let identifire = "MyCell"
     
