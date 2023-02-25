@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .red
         generateTabBar()
-//        setTabBarAppearance()
+        setTabBarAppearance()
 //        self.title = "Hi"
     }
     
