@@ -19,6 +19,7 @@
 		7139F80E29A7CCE80029347C /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80D29A7CCE80029347C /* GamesViewController.swift */; };
 		7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80F29A7CD1C0029347C /* SettingsViewController.swift */; };
 		7139F81229A7CD3F0029347C /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F81129A7CD3F0029347C /* PersonViewController.swift */; };
+		71C7BE4329AA6C2400F51F90 /* TableViewCellNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		7139F80D29A7CCE80029347C /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		7139F80F29A7CD1C0029347C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7139F81129A7CD3F0029347C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNew.swift; sourceTree = "<group>"; };
 		EF610731AD9C7912CDC06AFE /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.release.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 		7139F7F129A7C30E0029347C /* listOfGames */ = {
 			isa = PBXGroup;
 			children = (
+				71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */,
 				710547C629AA3BB1004303E0 /* viewControllers */,
 				7139F80829A7CA1A0029347C /* modules */,
 				7139F80629A7C8D70029347C /* network */,
@@ -274,6 +277,7 @@
 				7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */,
 				7139F80C29A7CC5E0029347C /* MainTabBarController.swift in Sources */,
 				7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */,
+				71C7BE4329AA6C2400F51F90 /* TableViewCellNew.swift in Sources */,
 				7139F7F529A7C30E0029347C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
