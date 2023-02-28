@@ -8,7 +8,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -16,7 +16,6 @@ class MainTabBarController: UITabBarController {
         setTabBarAppearance()
 //        self.title = "Hi"
     }
-    
     private func generateTabBar() {
         viewControllers = [
             generateVC(viewController: GamesViewController(), title: "Games", image: UIImage(named: "games")),
@@ -25,13 +24,11 @@ class MainTabBarController: UITabBarController {
             
         ]
     }
-    
     private func generateVC(viewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
         return viewController
     }
-    
     private func setTabBarAppearance() {
         let positionOnX: CGFloat = 10
         let positionOnY: CGFloat = 14
@@ -53,6 +50,4 @@ class MainTabBarController: UITabBarController {
         tabBar.tintColor = .tabBarItemAccent
         tabBar.unselectedItemTintColor = .tabBarItemLight
     }
-    
-
 }
