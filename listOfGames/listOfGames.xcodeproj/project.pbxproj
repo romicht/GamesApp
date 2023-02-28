@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		710547BC29AA1F9C004303E0 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710547BB29AA1F9C004303E0 /* SnapKit.framework */; };
-		710547C429AA34DA004303E0 /* Pods_listOfGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710547C329AA34DA004303E0 /* Pods_listOfGames.framework */; };
-		710547C529AA34DA004303E0 /* Pods_listOfGames.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 710547C329AA34DA004303E0 /* Pods_listOfGames.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71237C3529A93E7C001D845E /* UIColorExtension.swift */; };
 		7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F7F229A7C30E0029347C /* AppDelegate.swift */; };
 		7139F7F529A7C30E0029347C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F7F429A7C30E0029347C /* SceneDelegate.swift */; };
@@ -19,7 +16,8 @@
 		7139F80E29A7CCE80029347C /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80D29A7CCE80029347C /* GamesViewController.swift */; };
 		7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80F29A7CD1C0029347C /* SettingsViewController.swift */; };
 		7139F81229A7CD3F0029347C /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F81129A7CD3F0029347C /* PersonViewController.swift */; };
-		71C7BE4329AA6C2400F51F90 /* TableViewCellNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */; };
+		7162C8FC29AD20900037C813 /* Pods_listOfGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; };
+		7162C8FD29AD20900037C813 /* Pods_listOfGames.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				710547C529AA34DA004303E0 /* Pods_listOfGames.framework in Embed Frameworks */,
+				7162C8FD29AD20900037C813 /* Pods_listOfGames.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,8 +36,6 @@
 
 /* Begin PBXFileReference section */
 		364F437933AA2EC09209AED7 /* Pods-listOfGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.debug.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.debug.xcconfig"; sourceTree = "<group>"; };
-		710547BB29AA1F9C004303E0 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		710547C329AA34DA004303E0 /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71237C3529A93E7C001D845E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		7139F7EF29A7C30E0029347C /* listOfGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listOfGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7139F7F229A7C30E0029347C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,8 +47,7 @@
 		7139F80D29A7CCE80029347C /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		7139F80F29A7CD1C0029347C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7139F81129A7CD3F0029347C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
-		71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNew.swift; sourceTree = "<group>"; };
-		EF610731AD9C7912CDC06AFE /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.release.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,8 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710547BC29AA1F9C004303E0 /* SnapKit.framework in Frameworks */,
-				710547C429AA34DA004303E0 /* Pods_listOfGames.framework in Frameworks */,
+				7162C8FC29AD20900037C813 /* Pods_listOfGames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,17 +70,6 @@
 				F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		710547C629AA3BB1004303E0 /* viewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				7139F80B29A7CC5E0029347C /* MainTabBarController.swift */,
-				7139F80D29A7CCE80029347C /* GamesViewController.swift */,
-				7139F81129A7CD3F0029347C /* PersonViewController.swift */,
-				7139F80F29A7CD1C0029347C /* SettingsViewController.swift */,
-			);
-			path = viewControllers;
 			sourceTree = "<group>";
 		};
 		7139F7E629A7C30E0029347C = {
@@ -110,10 +93,7 @@
 		7139F7F129A7C30E0029347C /* listOfGames */ = {
 			isa = PBXGroup;
 			children = (
-				71C7BE4229AA6C2400F51F90 /* TableViewCellNew.swift */,
-				710547C629AA3BB1004303E0 /* viewControllers */,
-				7139F80829A7CA1A0029347C /* modules */,
-				7139F80629A7C8D70029347C /* network */,
+				7162C90129AD30600037C813 /* Modules */,
 				7139F7F229A7C30E0029347C /* AppDelegate.swift */,
 				7139F7F429A7C30E0029347C /* SceneDelegate.swift */,
 				71237C3529A93E7C001D845E /* UIColorExtension.swift */,
@@ -125,13 +105,6 @@
 			path = listOfGames;
 			sourceTree = "<group>";
 		};
-		7139F80629A7C8D70029347C /* network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = network;
-			sourceTree = "<group>";
-		};
 		7139F80729A7C8DB0029347C /* support */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,19 +112,61 @@
 			path = support;
 			sourceTree = "<group>";
 		};
-		7139F80829A7CA1A0029347C /* modules */ = {
+		7162C90129AD30600037C813 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7162C90629AD31E90037C813 /* UserInfo */,
+				7162C90429AD310B0037C813 /* Common */,
+				7162C90529AD312E0037C813 /* Settings */,
+				7162C90229AD30C10037C813 /* Games */,
 			);
-			path = modules;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7162C90229AD30C10037C813 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				7162C90329AD30D50037C813 /* GameList */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		7162C90329AD30D50037C813 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				7139F80D29A7CCE80029347C /* GamesViewController.swift */,
+			);
+			path = GameList;
+			sourceTree = "<group>";
+		};
+		7162C90429AD310B0037C813 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7139F80B29A7CC5E0029347C /* MainTabBarController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7162C90529AD312E0037C813 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7139F80F29A7CD1C0029347C /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7162C90629AD31E90037C813 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7139F81129A7CD3F0029347C /* PersonViewController.swift */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		E7B26E932961BF358F1F68B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				710547C329AA34DA004303E0 /* Pods_listOfGames.framework */,
-				710547BB29AA1F9C004303E0 /* SnapKit.framework */,
-				EF610731AD9C7912CDC06AFE /* Pods_listOfGames.framework */,
+				7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,7 +182,6 @@
 				7139F7EB29A7C30E0029347C /* Sources */,
 				7139F7EC29A7C30E0029347C /* Frameworks */,
 				7139F7ED29A7C30E0029347C /* Resources */,
-				DE8812EBB0DA49DD733840AB /* [CP] Embed Pods Frameworks */,
 				710547BE29AA1F9C004303E0 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -247,23 +261,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE8812EBB0DA49DD733840AB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-listOfGames/Pods-listOfGames-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-listOfGames/Pods-listOfGames-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-listOfGames/Pods-listOfGames-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,7 +274,6 @@
 				7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */,
 				7139F80C29A7CC5E0029347C /* MainTabBarController.swift in Sources */,
 				7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */,
-				71C7BE4329AA6C2400F51F90 /* TableViewCellNew.swift in Sources */,
 				7139F7F529A7C30E0029347C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
