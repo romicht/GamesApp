@@ -19,6 +19,7 @@
 		7162C8FC29AD20900037C813 /* Pods_listOfGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; };
 		7162C8FD29AD20900037C813 /* Pods_listOfGames.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71E9E81329AE6D6D00813442 /* GamesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E9E81229AE6D6D00813442 /* GamesViewController.storyboard */; };
+		71E9E81B29AE72D700813442 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E9E81A29AE72D700813442 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		7139F81129A7CD3F0029347C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E9E81229AE6D6D00813442 /* GamesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GamesViewController.storyboard; sourceTree = "<group>"; };
+		71E9E81A29AE72D700813442 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.release.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 		7162C90429AD310B0037C813 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				71E9E81A29AE72D700813442 /* TableViewCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7139F80E29A7CCE80029347C /* GamesViewController.swift in Sources */,
+				71E9E81B29AE72D700813442 /* TableViewCell.swift in Sources */,
 				71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */,
 				7139F81229A7CD3F0029347C /* PersonViewController.swift in Sources */,
 				7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */,
