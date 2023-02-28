@@ -40,7 +40,7 @@
 		7139F7EF29A7C30E0029347C /* listOfGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listOfGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7139F7F229A7C30E0029347C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7139F7F429A7C30E0029347C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7139F7FB29A7C3120029347C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7139F7FB29A7C3120029347C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		7139F7FE29A7C3120029347C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7139F80029A7C3120029347C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7139F80B29A7CC5E0029347C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -97,8 +97,6 @@
 				7139F7F229A7C30E0029347C /* AppDelegate.swift */,
 				7139F7F429A7C30E0029347C /* SceneDelegate.swift */,
 				71237C3529A93E7C001D845E /* UIColorExtension.swift */,
-				7139F7FB29A7C3120029347C /* Assets.xcassets */,
-				7139F7FD29A7C3120029347C /* LaunchScreen.storyboard */,
 				7139F80729A7C8DB0029347C /* support */,
 				7139F80029A7C3120029347C /* Info.plist */,
 			);
@@ -108,6 +106,8 @@
 		7139F80729A7C8DB0029347C /* support */ = {
 			isa = PBXGroup;
 			children = (
+				7139F7FB29A7C3120029347C /* Assets.xcassets */,
+				7139F7FD29A7C3120029347C /* LaunchScreen.storyboard */,
 			);
 			path = support;
 			sourceTree = "<group>";
