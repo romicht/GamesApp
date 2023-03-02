@@ -16,8 +16,6 @@
 		7139F80E29A7CCE80029347C /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80D29A7CCE80029347C /* GamesViewController.swift */; };
 		7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F80F29A7CD1C0029347C /* SettingsViewController.swift */; };
 		7139F81229A7CD3F0029347C /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F81129A7CD3F0029347C /* PersonViewController.swift */; };
-		7162C8FC29AD20900037C813 /* Pods_listOfGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; };
-		7162C8FD29AD20900037C813 /* Pods_listOfGames.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71E9E81329AE6D6D00813442 /* GamesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E9E81229AE6D6D00813442 /* GamesViewController.storyboard */; };
 		71E9E81B29AE72D700813442 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E9E81A29AE72D700813442 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7162C8FD29AD20900037C813 /* Pods_listOfGames.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +46,6 @@
 		7139F80D29A7CCE80029347C /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		7139F80F29A7CD1C0029347C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7139F81129A7CD3F0029347C /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
-		7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_listOfGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E9E81229AE6D6D00813442 /* GamesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GamesViewController.storyboard; sourceTree = "<group>"; };
 		71E9E81A29AE72D700813442 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.release.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7162C8FC29AD20900037C813 /* Pods_listOfGames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +167,6 @@
 		E7B26E932961BF358F1F68B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7162C8FB29AD20900037C813 /* Pods_listOfGames.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

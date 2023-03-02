@@ -3,8 +3,6 @@
 
 target 'listOfGames' do
   use_frameworks!
-
-
  
 
 end
