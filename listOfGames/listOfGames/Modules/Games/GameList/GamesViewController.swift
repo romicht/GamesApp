@@ -51,12 +51,19 @@ class GamesViewController: UIViewController {
 //            }
     //MARK: - Methods
         func getRequest() {
-            let urlString = "https://api.rawg.io/api/games"
+            let urlString = "https://api.rawg.io/api/games?key=780cc9cdce0740e1a2b108c6cb9735b4"
+//            let urlString = "https://api.rawg.io/api/games"
             guard let url = URL(string: urlString) else { return }
             var request = URLRequest(url: url)
-            
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            request.httpMethod = "Get"
+//            request.allHTTPHeaderFields = [
+//                "key": "780cc9cdce0740e1a2b108c6cb9735b4"
+//            ]
+//            request.addValue("780cc9cdce0740e1a2b108c6cb9735b4", forHTTPHeaderField: "key")
+//            request.setValue("780cc9cdce0740e1a2b108c6cb9735b4", forHTTPHeaderField: "key")
+//            request.setValue("780cc9cdce0740e1a2b108c6cb9735b4", forHTTPHeaderField: "key")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
                     print(error)
                     return
@@ -64,6 +71,7 @@ class GamesViewController: UIViewController {
                 guard let data = data else { return }
                 let jsonString = String(data: data, encoding: .utf8)
                 print(jsonString)
+                
             }.resume()
         }
     }
@@ -84,3 +92,5 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
         return 44
     }
 }
+
+
