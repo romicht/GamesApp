@@ -27,15 +27,12 @@ class GameTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "GameTableViewCell", bundle: nil)
     }
-    func configure() {
-//        func configure(with model: Results) {
-        self.gameName.textAlignment = .center
-        self.gameRatings.textAlignment = .center
-//        self.gameName.text = model.name
-        self.gameName.text = "Name"
-//        self.gameRatings.text = String(model.rating)
-        self.gameRatings.text = "Rating"
-//        self.changeImage(link: model.background_image)
+    func configure(with model: Results) {
+        self.gameName.textAlignment = .left
+        self.gameRatings.textAlignment = .left
+        self.gameName.text = model.name
+        self.gameRatings.text = String(model.rating)
+        self.changeImage(link: model.background_image)
         self.gameImage.contentMode = .scaleAspectFit
     }
     func changeImage(link: String){

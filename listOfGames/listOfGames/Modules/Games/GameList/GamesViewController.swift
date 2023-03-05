@@ -11,12 +11,12 @@ class GamesViewController: UIViewController {
     // MARK: - GUI Variables
     private lazy var gametableView: UITableView = {
         let tableView = UITableView()
-        // Type 1
+        tableView.frame = CGRect(x: 10, y: 30, width: 300, height: 600)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(GameTableViewCell.self,
+        tableView.register(GameTableViewCell.nib().self,
                            forCellReuseIdentifier: GameTableViewCell.identifire)
-        tableView.separatorStyle = .none
+//        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -31,12 +31,9 @@ class GamesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(gametableView)
-//
-//        gameTableViewNew.register(GameTableViewCell.nib(), forCellReuseIdentifier: GameTableViewCell.identifire)
-//        gameTableView.delegate = self
-//        gameTableView.dataSource = self
         
+        self.view.addSubview(gametableView)
+
         view.backgroundColor = .green
         getRequest()
     }
@@ -92,10 +89,10 @@ class GamesViewController: UIViewController {
 //                print(json)
                 let results = gameList.results
                 self.models.append(contentsOf: results)
-//                DispatchQueue.main.async {
-//                    self.gameTableView.reloadData()
+                DispatchQueue.main.async {
+                    self.gametableView.reloadData()
 //                    self.table.tableHeaderView = self.createTableHeader()
-//                }
+                }
             }.resume()
         }
 }
@@ -103,17 +100,15 @@ class GamesViewController: UIViewController {
 // MARK: - Extension
 extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-//        return self.models.count
+        return self.models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
-        cell.configure()
-//        cell.configure(with: models[indexPath.row])
+        cell.configure(with: models[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 110
     }
 }
     

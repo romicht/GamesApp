@@ -45,7 +45,7 @@ class MainTabBarController: UITabBarController {
         tabBar.itemWidth = width / 5
         tabBar.itemPositioning = .centered
 
-        roundLayer.fillColor = UIColor.mainWhite.cgColor
+        roundLayer.fillColor = UIColor.systemCyan.cgColor
 
         tabBar.tintColor = .tabBarItemAccent
         tabBar.unselectedItemTintColor = .tabBarItemLight
