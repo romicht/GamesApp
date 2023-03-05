@@ -2,7 +2,7 @@
 //  TableViewCell.swift
 //  listOfGames
 //
-//  Created by Роман Цуприк on 28.02.23.
+//  Created by Роман Цуприк on 5.03.23.
 //
 
 import UIKit
@@ -19,5 +19,5 @@ class TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -5,73 +5,10 @@
 //  Created by Роман Цуприк on 4.03.23.
 //
 
+//error: valueNotFound(Swift.String, Swift.DecodingError.Context(codingPath: [CodingKeys(stringValue: "previous", intValue: nil)], debugDescription: "Expected String value but found null instead.", underlyingError: nil))
+//dataCorrupted(Swift.DecodingError.Context(codingPath: [CodingKeys(stringValue: "results", intValue: nil), _JSONKey(stringValue: "Index 0", intValue: 0), CodingKeys(stringValue: "rating", intValue: nil)], debugDescription: "Parsed JSON number <4.47> does not fit in Int.", underlyingError: nil))
+
 import Foundation
 
-struct List: Decodable {
-    let count: Int
-    let next: String
-    let previous: String
-    let results: [Results]
-}
 
-struct Results: Decodable {
-    let id: Int
-    let slug: String
-    let name: String
-    let released: String
-    let tba: Bool
-    let background_image: String
-    let rating: Int
-    let rating_top: Int
-    let ratings: [Ratings]
-    let ratings_count: Int
-    let reviews_text_count: String
-    let added: Int
-    let added_by_status: AddedByStatus
-    let metacritic: Int
-    let playtime: Int
-    let suggestions_count: Int
-    let updated: String
-    let esrb_rating: EsrbRating
-    let platforms: [Platforms]
-}
-
-struct Ratings: Codable {
-    let id: Int
-    let title: String
-    let count: Int
-    let percent: Double
-}
-
-struct AddedByStatus: Codable {
-    let yet: Int
-    let owned: Int
-    let beaten: Int
-    let toplay: Int
-    let dropped: Int
-    let playing: Int
-}
-
-struct EsrbRating: Codable {
-    let id: Int
-    let slug: String
-    let name: String
-}
-
-struct Platforms: Codable {
-    let platform: Platform
-    let released_at: String
-    let requirements: Requirements
-}
-
-struct Platform: Codable {
-    let id: Int
-    let slug: String
-    let name: String
-}
-
-struct Requirements: Codable {
-    let minimum: String
-    let recommended: String
-}
 
