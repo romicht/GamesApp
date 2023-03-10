@@ -19,10 +19,8 @@ class GamesViewController: UIViewController {
 //        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
         return tableView
     }()
-    
     var models = [Results]()
 //    let sessionConfiguration = URLSessionConfiguration.default
 //    let session = URLSession.shared
@@ -30,7 +28,6 @@ class GamesViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.view.addSubview(gametableView)
 
@@ -104,6 +101,7 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
+        cell.changeImage(link: models[indexPath.row])
         cell.configure(with: models[indexPath.row])
         return cell
     }
