@@ -11,4 +11,31 @@ class NetworkingManagers {
     
     //MARK: - Properties
     static let shared = NetworkingManagers()
+    //MARK: - Methods
+    func fethGames(completion: @escaping ([Results]) -> ()) {
+        guard let url = URL(string: "\(Constansts.urlStringGR)?key=\(Constansts.apiStringKeyR)") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "Get"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // Validation
+            guard let data = data, error == nil else {
+                print("something went wrong")
+                return
+            }
+            //Convert data to models/some object
+            var json: List?
+            do {
+                json = try JSONDecoder().decode(List.self, from: data)
+            }
+            catch {
+                print("error: \(error)")
+            }
+            guard let gameList = json else {
+                return
+            }
+            let results = gameList.results
+            completion(results)
+        }.resume()
+    }
 }

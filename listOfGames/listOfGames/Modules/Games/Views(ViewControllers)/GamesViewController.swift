@@ -30,12 +30,15 @@ class GamesViewController: UIViewController {
         
         self.view.addSubview(gametableView)
         view.backgroundColor = .green
-        self.viewModel.fethGames { [weak self] (results) in
-            self?.gameVC = results
-            DispatchQueue.main.async {
-                self?.gametableView.reloadData()
-            }
+        self.viewModel.loadDataInTable(tabel: self.gametableView) { (results) in
+            self.gameVC = results
         }
+//        self.viewModel.fethGames { [weak self] (results) in
+//            self?.gameVC = results
+//            DispatchQueue.main.async {
+//                self?.gametableView.reloadData()
+//            }
+//        }
     }
 }
 
