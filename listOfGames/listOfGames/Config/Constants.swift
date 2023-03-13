@@ -8,6 +8,6 @@
 import Foundation
 
 class Constansts {
-    static let urlStringGR = "https://api.rawg.io/api/games"
-    static let apiStringKeyR = "780cc9cdce0740e1a2b108c6cb9735b4"
+    static let urlGameRawg = "https://api.rawg.io/api/games"
+    static let apiKeyRawg = "780cc9cdce0740e1a2b108c6cb9735b4"
 }

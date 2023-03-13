@@ -13,7 +13,7 @@ class NetworkingManagers {
     static let shared = NetworkingManagers()
     //MARK: - Methods
     func fethGames(completion: @escaping ([Results]) -> ()) {
-        guard let url = URL(string: "\(Constansts.urlStringGR)?key=\(Constansts.apiStringKeyR)") else { return }
+        guard let url = URL(string: "\(Constansts.urlGameRawg)?key=\(Constansts.apiKeyRawg)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "Get"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
