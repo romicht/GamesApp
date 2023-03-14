@@ -5,7 +5,6 @@
 //  Created by Роман Цуприк on 11.03.23.
 //
 
-import Foundation
 import UIKit
 
 class GameViewModel {
@@ -14,16 +13,17 @@ class GameViewModel {
     var gamesVM = [Results]()
     
     // MARK: - Methods
-    func loadDataInTable(tabel: UITableView, completion: @escaping ([Results]) -> ()) {
-        NetworkingManagers.shared.fethGames { (results) in
-            completion(results)
-            DispatchQueue.main.async {
-                tabel.reloadData()
-            }
+    func loadDataIntoTable(completion: @escaping () -> ()) {
+        NetworkingManagers.shared.fethGames { [weak self] (results) in
+            self?.gamesVM = results
+            completion()
         }
-        
     }
     
-    
+    func loadDataIntoImageView(index: Int, completion: @escaping (Data) -> ()) {
+        NetworkingManagers.shared.fetchImage(link: self.gamesVM[index].background_image) { imageData in
+            completion(imageData)
+        }
+    }
 }
 

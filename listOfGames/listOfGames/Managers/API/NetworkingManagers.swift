@@ -38,4 +38,10 @@ class NetworkingManagers {
             completion(results)
         }.resume()
     }
+
+    func fetchImage(link urlString: String, completion: @escaping (Data) -> ()) {
+            let url = URL(string: urlString)
+            let imageData = try? Data(contentsOf: url!)
+            completion(imageData!)
+    }
 }
