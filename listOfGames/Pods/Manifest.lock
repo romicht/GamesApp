@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 0878800a7ef5f7cbabec01a93dbd338c66a4dbf7
+PODS:
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+SPEC CHECKSUMS:
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 3df18aa83f71ae2556d545befb9b9880fe59c0e6
 
 COCOAPODS: 1.8.4
