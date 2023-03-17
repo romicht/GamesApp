@@ -22,9 +22,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-uw-r76">
-                        <rect key="frame" x="239" y="63" width="25" height="12"/>
+                        <rect key="frame" x="229" y="63" width="35" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="CSs-0M-rIA"/>
+                            <constraint firstAttribute="width" constant="35" id="CSs-0M-rIA"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
@@ -38,7 +38,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz9-2Y-L9f">
-                        <rect key="frame" x="104" y="15" width="85" height="13.5"/>
+                        <rect key="frame" x="104" y="15" width="75" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMD-Bm-gvD">
-                        <rect key="frame" x="194" y="63" width="40" height="12"/>
+                        <rect key="frame" x="184" y="63" width="40" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="gC1-4Q-zbd"/>
                         </constraints>

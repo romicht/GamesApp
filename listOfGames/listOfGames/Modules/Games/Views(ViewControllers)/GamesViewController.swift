@@ -19,7 +19,7 @@ class GamesViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(GameTableViewCell.nib().self,
                            forCellReuseIdentifier: GameTableViewCell.identifire)
-//        tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forHeaderFooterViewReuseIdentifier: GameTableViewCell.identifire)
+        tableView.register(HeaderView.nib().self, forHeaderFooterViewReuseIdentifier: "HeaderView")
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,14 +72,13 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
         return 75
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//    let headerView = gametableView.dequeueReusableHeaderFooterView(withIdentifier: GameTableViewCell.identifire) as! GameTableViewCell
-////    headerView.sectionTitleLabel.text = "TableView Heder \(section)"
-//    return headerView
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
+        return view
+    }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//    return 65
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
 }
 
