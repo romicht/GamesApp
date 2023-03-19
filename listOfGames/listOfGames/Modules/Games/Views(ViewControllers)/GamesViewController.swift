@@ -32,11 +32,28 @@ class GamesViewController: UIViewController {
         
         self.view.addSubview(gametableView)
         constraint()
-
+        
         view.backgroundColor = .green
         self.viewModel.loadDataIntoTable { [weak self] in
             DispatchQueue.main.async {
                 self?.gametableView.reloadData()
+            }
+        } errorHandler: { error in
+            DispatchQueue.main.async {
+            switch error {
+            case .netWorkError:
+                let alertController = UIAlertController(title: "Warning", message: "Network error", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ок", style: .default) {_ in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
+            case .parsingError:
+                let alertController = UIAlertController(title: "Warning", message: "Parsing of json error", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ок", style: .default) {_ in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
+            }
             }
         }
     }
@@ -58,9 +75,18 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
         cell.setNumberOfRaw(number: indexPath.row)
-        self.viewModel.loadDataIntoImageView(index: indexPath.row) { imageData in
+        self.viewModel.loadDataIntoImageView(index: indexPath.row) { result in
+            switch result {
+            case .success(let data) :
             DispatchQueue.main.async {
-                cell.gameImage.image = UIImage(data: imageData)
+                cell.gameImage.image = UIImage(data: data)
+            }
+            case .failure:
+                let alertController = UIAlertController(title: "Logo", message: "Image address does not exist", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ок", style: .default) {_ in
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         cell.configure(with: viewModel.gamesVM[indexPath.row])

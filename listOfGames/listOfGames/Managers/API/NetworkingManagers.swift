@@ -4,21 +4,33 @@
 //
 //  Created by Роман Цуприк on 11.03.23.
 //
-
 import Foundation
 
+enum LoadDataError {
+    case netWorkError
+    case parsingError
+}
+
+enum Result {
+    case success(Data)
+    case failure
+}
+
 class NetworkingManagers {
-    
+
     //MARK: - Properties
     static let shared = NetworkingManagers()
     //MARK: - Methods
-    func fethGames(completion: @escaping ([Results]) -> ()) {
+    func fethGames(completion: @escaping ([Results]) -> (), errorHandler: @escaping (LoadDataError) -> ()) {
         guard let url = URL(string: "\(Constansts.urlGameRawg)?key=\(Constansts.apiKeyRawg)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "Get"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.dataTask(with: request) { data, response, error in
             // Validation
+            if error != nil {
+                errorHandler(.netWorkError)
+            }
             guard let data = data, error == nil else {
                 print("something went wrong")
                 return
@@ -29,7 +41,7 @@ class NetworkingManagers {
                 json = try JSONDecoder().decode(List.self, from: data)
             }
             catch {
-                print("error: \(error)")
+                errorHandler(.parsingError)
             }
             guard let gameList = json else {
                 return
@@ -38,10 +50,17 @@ class NetworkingManagers {
             completion(results)
         }.resume()
     }
-
-    func fetchImage(link urlString: String, completion: @escaping (Data) -> ()) {
-            let url = URL(string: urlString)
-            let imageData = try? Data(contentsOf: url!)
-            completion(imageData!)
+    
+    func fetchImage(link urlString: String, completion: @escaping (Result) -> ()) {
+        guard let url = URL(string: "\(urlString)") else {
+            return
+        }
+        let imageData = try? Data(contentsOf: url)
+        if imageData == nil {
+            completion(.failure)
+        } else {
+        completion(.success(imageData!))
+        }
     }
 }
+                   

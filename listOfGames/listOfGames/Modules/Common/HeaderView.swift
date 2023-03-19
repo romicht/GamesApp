@@ -18,5 +18,4 @@ class HeaderView: UITableViewHeaderFooterView {
     static func nib() -> UINib {
         return UINib(nibName: "HeaderView", bundle: nil)
     }
-
 }
