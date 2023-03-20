@@ -11,10 +11,10 @@ enum LoadDataError {
     case parsingError
 }
 
-enum Result {
-    case success(Data)
-    case failure
-}
+//enum Result {
+//    case success(Data)
+//    case failure
+//}
 
 class NetworkingManagers {
 
@@ -51,16 +51,22 @@ class NetworkingManagers {
         }.resume()
     }
     
-    func fetchImage(link urlString: String, completion: @escaping (Result) -> ()) {
-        guard let url = URL(string: "\(urlString)") else {
-            return
-        }
-        let imageData = try? Data(contentsOf: url)
-        if imageData == nil {
-            completion(.failure)
-        } else {
-        completion(.success(imageData!))
-        }
+//    func fetchImage(link urlString: String, completion: @escaping (Result) -> ()) {
+//        guard let url = URL(string: "\(urlString)") else {
+//            return
+//        }
+//        let imageData = try? Data(contentsOf: url)
+//        if imageData == nil {
+//            completion(.failure)
+//        } else {
+//        completion(.success(imageData!))
+//        }
+//    }
+    
+    func fetchImage(link urlString: String, completion: @escaping (Data?) -> ()) {
+        let url = URL(string: urlString)
+        let data = try? Data(contentsOf: url!)
+        completion(data)
     }
 }
                    

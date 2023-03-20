@@ -25,6 +25,10 @@ class GamesViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    lazy var cachedDataSource: NSCache<AnyObject, UIImage> = {
+        let cache = NSCache<AnyObject, UIImage>()
+        return cache
+    }()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -75,18 +79,16 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
         cell.setNumberOfRaw(number: indexPath.row)
-        self.viewModel.loadDataIntoImageView(index: indexPath.row) { result in
-            switch result {
-            case .success(let data) :
+        self.viewModel.loadDataIntoImageView(index: indexPath.row) { data in
             DispatchQueue.main.async {
-                cell.gameImage.image = UIImage(data: data)
-            }
-            case .failure:
-                let alertController = UIAlertController(title: "Logo", message: "Image address does not exist", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Ок", style: .default) {_ in
+                if data == nil {
+                    cell.gameImage.layer.cornerRadius = 0
+                    cell.gameImage.layer.borderWidth = 1
+                    cell.gameImage.layer.borderColor = UIColor.gray.cgColor
+                    cell.gameImage.image = UIImage(named: "ImageNotFound" )
+                } else {
+                    cell.gameImage.image = UIImage(data: data!)
                 }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
             }
         }
         cell.configure(with: viewModel.gamesVM[indexPath.row])
