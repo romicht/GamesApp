@@ -79,20 +79,27 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
         cell.setNumberOfRaw(number: indexPath.row)
-        self.viewModel.loadDataIntoImageView(index: indexPath.row) { data in
-            DispatchQueue.main.async {
-                if data == nil {
-                    cell.gameImage.layer.cornerRadius = 0
-                    cell.gameImage.layer.borderWidth = 1
-                    cell.gameImage.layer.borderColor = UIColor.gray.cgColor
-                    cell.gameImage.image = UIImage(named: "ImageNotFound" )
-                } else {
-                    cell.gameImage.image = UIImage(data: data!)
+        if let image = self.cachedDataSource.object(forKey: indexPath.row as AnyObject) {
+            cell.gameImage.image = image
+        } else {
+            self.viewModel.loadDataIntoImageView(index: indexPath.row) { data in
+                DispatchQueue.main.async {
+                    if data == nil {
+                        cell.gameImage.layer.cornerRadius = 0
+                        cell.gameImage.layer.borderWidth = 1
+                        cell.gameImage.layer.borderColor = UIColor.gray.cgColor
+                        cell.gameImage.image = UIImage(named: "ImageNotFound" )
+                    }
+                    else {
+                        cell.gameImage.image = UIImage(data: data!)
+                        self.gametableView.reloadRows(at: [indexPath], with: .fade)
+                        self.cachedDataSource.setObject(UIImage(data: data!)!, forKey: indexPath.row as AnyObject)
+                    }
                 }
             }
         }
         cell.configure(with: viewModel.gamesVM[indexPath.row])
-//        cell.selectionStyle = .none
+        //        cell.selectionStyle = .none
         return cell
     }
     
