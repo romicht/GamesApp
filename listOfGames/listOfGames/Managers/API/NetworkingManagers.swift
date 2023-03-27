@@ -5,6 +5,7 @@
 //  Created by Роман Цуприк on 11.03.23.
 //
 import Foundation
+import UIKit
 
 enum LoadDataError {
     case netWorkError
@@ -20,6 +21,7 @@ class NetworkingManagers {
 
     //MARK: - Properties
     static let shared = NetworkingManagers()
+    var cachedDataSource = NSCache<NSString, UIImage>()
     //MARK: - Methods
     func fethGames(completion: @escaping ([Results]) -> (), errorHandler: @escaping (LoadDataError) -> ()) {
         guard let url = URL(string: "\(Constansts.urlGameRawg)?key=\(Constansts.apiKeyRawg)") else { return }
@@ -63,10 +65,17 @@ class NetworkingManagers {
 //        }
 //    }
     
-    func fetchImage(link urlString: String, completion: @escaping (Data?) -> ()) {
+    func fetchImage(link urlString: String, completion: @escaping (UIImage) -> ()) {
         let url = URL(string: urlString)
-        let data = try? Data(contentsOf: url!)
-        completion(data)
+        if let cachedImage = cachedDataSource.object(forKey: urlString as NSString) {
+            completion(cachedImage)
+        } else {
+            let data = try? Data(contentsOf: url!)
+            if let image = UIImage(data: data!) {
+            cachedDataSource.setObject(image, forKey: urlString as NSString)
+            completion(image)
+            }
+        }
     }
 }
                    

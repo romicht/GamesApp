@@ -25,7 +25,7 @@ class GameViewModel {
 //        { [weak self] results, exactError in
 //    }
     
-    func loadDataIntoImageView(index: Int, completion: @escaping (Data?) -> ()) {
+    func loadDataIntoImageView(index: Int, completion: @escaping (UIImage) -> ()) {
         NetworkingManagers.shared.fetchImage(link: self.gamesVM[index].background_image) { data in
             completion(data)
         }
