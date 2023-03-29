@@ -93,7 +93,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" red="0.86996918919999999" green="0.70228928329999996" blue="0.84635657070000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.29536036601477311" green="0.57001344737188797" blue="0.86996918919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="conteinerView" destination="ojz-na-fox" id="8oQ-Yg-Qiq"/>
                 <outlet property="gameImage" destination="Qvw-sv-llx" id="PHT-aQ-ipc"/>

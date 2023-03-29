@@ -12,6 +12,7 @@ class GamesViewController: UIViewController {
     
     //MARK: - Properties
     var viewModel = GameViewModel()
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
     private lazy var gametableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -29,9 +30,9 @@ class GamesViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .green
         self.view.addSubview(gametableView)
+        self.view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
         constraint()
         loadData()
     }
@@ -83,6 +84,9 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                 cell.gameImage.image = image
             }
+            DispatchQueue.main.async {
+                cell.gameImage.image = image
+            }
         }
         cell.configure(with: viewModel.gamesVM[indexPath.row])
         return cell
@@ -100,5 +104,10 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let gameDescriptionVC = GameDescriptionViewController()
+        gameDescriptionVC.model = viewModel.gamesVM[indexPath.row]
+        navigationController?.pushViewController(gameDescriptionVC, animated: true)
+    }
 }
-
