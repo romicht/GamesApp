@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 
 class GamesViewController: UIViewController {
+    var activityIndicator = UIActivityIndicatorView()
     
     //MARK: - Properties
     var viewModel = GameViewModel()
-    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
     private lazy var gametableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -25,21 +25,22 @@ class GamesViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
-    
+
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(gametableView)
-        self.view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
         constraint()
         loadData()
+        setupActiveIndicator()
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
     }
     
     // MARK: - Methods
     private func loadData() {
         self.viewModel.loadDataIntoTable { [weak self] in
+            print("Данные загружены")
             DispatchQueue.main.async {
                 self?.gametableView.reloadData()
             }
@@ -68,6 +69,14 @@ class GamesViewController: UIViewController {
             make.top.left.right.bottom.equalToSuperview()
         }
     }
+    
+    func setupActiveIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = UIColor.red
+        self.view.addSubview(activityIndicator)
+    }
 }
 
 // MARK: - Extension
@@ -80,12 +89,13 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
         cell.setNumberOfRaw(number: indexPath.row)
-        self.viewModel.loadDataIntoImageView(index: indexPath.row) { image in
-            DispatchQueue.main.async {
-                cell.gameImage.image = image
-            }
-            DispatchQueue.main.async {
-                cell.gameImage.image = image
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        DispatchQueue.main.async {
+            self.viewModel.loadDataIntoImageView(index: indexPath.row) { [weak self] image in
+                cell.addImage(image: image)
+                self?.activityIndicator.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
             }
         }
         cell.configure(with: viewModel.gamesVM[indexPath.row])

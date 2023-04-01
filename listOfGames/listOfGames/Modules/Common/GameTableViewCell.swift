@@ -58,4 +58,8 @@ class GameTableViewCell: UITableViewCell {
         self.number.text = String(number + 1)
 
     }
+    
+    func addImage(image: UIImage) {
+        self.gameImage.image = image
+    }
 }

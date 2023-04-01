@@ -53,18 +53,6 @@ class NetworkingManagers {
         }.resume()
     }
     
-//    func fetchImage(link urlString: String, completion: @escaping (Result) -> ()) {
-//        guard let url = URL(string: "\(urlString)") else {
-//            return
-//        }
-//        let imageData = try? Data(contentsOf: url)
-//        if imageData == nil {
-//            completion(.failure)
-//        } else {
-//        completion(.success(imageData!))
-//        }
-//    }
-    
     func fetchImage(link urlString: String, completion: @escaping (UIImage) -> ()) {
         let url = URL(string: urlString)
         if let cachedImage = cachedDataSource.object(forKey: urlString as NSString) {
