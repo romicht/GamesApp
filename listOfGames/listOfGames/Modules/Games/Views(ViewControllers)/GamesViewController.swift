@@ -10,6 +10,7 @@ import SnapKit
 
 class GamesViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
+    var isLoadMore = false
     
     //MARK: - Properties
     var viewModel = GameViewModel()
@@ -42,6 +43,8 @@ class GamesViewController: UIViewController {
         self.viewModel.loadDataIntoTable { [weak self] in
             print("Данные загружены")
             DispatchQueue.main.async {
+                self?.gametableView.tableFooterView = nil
+                self?.isLoadMore = false
                 self?.gametableView.reloadData()
             }
         } errorHandler: { error in
@@ -80,7 +83,7 @@ class GamesViewController: UIViewController {
 }
 
 // MARK: - Extension
-extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
+extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.gamesVM.count
@@ -119,5 +122,31 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource {
         let gameDescriptionVC = GameDescriptionViewController()
         gameDescriptionVC.model = viewModel.gamesVM[indexPath.row]
         navigationController?.pushViewController(gameDescriptionVC, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeit = gametableView.contentSize.height
+        if offsetY > 100 + contentHeit - scrollView.frame.height {
+            self.gametableView.tableFooterView = createSpinnerFooter()
+            if !isLoadMore {
+                beginLoadMore()
+            }
+        }
+        print("offsetY: \(offsetY) contentHeit: \(contentHeit) scrollView: \(scrollView.frame.height)")
+    }
+    
+    func beginLoadMore() {
+        isLoadMore = true
+        loadData()
+    }
+    
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: 100))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
     }
 }

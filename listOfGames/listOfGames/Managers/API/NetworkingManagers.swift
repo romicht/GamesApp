@@ -12,19 +12,15 @@ enum LoadDataError {
     case parsingError
 }
 
-//enum Result {
-//    case success(Data)
-//    case failure
-//}
-
 class NetworkingManagers {
 
     //MARK: - Properties
     static let shared = NetworkingManagers()
     var cachedDataSource = NSCache<NSString, UIImage>()
+    var numberOfPage: Int = 1
     //MARK: - Methods
     func fethGames(completion: @escaping ([Results]) -> (), errorHandler: @escaping (LoadDataError) -> ()) {
-        guard let url = URL(string: "\(Constansts.urlGameRawg)?key=\(Constansts.apiKeyRawg)") else { return }
+        guard let url = URL(string: "\(Constansts.urlGameRawg)?key=\(Constansts.apiKeyRawg)&page=\(numberOfPage)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "Get"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -43,13 +39,16 @@ class NetworkingManagers {
                 json = try JSONDecoder().decode(List.self, from: data)
             }
             catch {
+                print(error)
                 errorHandler(.parsingError)
             }
             guard let gameList = json else {
                 return
             }
+//            print(gameList.next)
             let results = gameList.results
             completion(results)
+            self.numberOfPage += 1
         }.resume()
     }
     

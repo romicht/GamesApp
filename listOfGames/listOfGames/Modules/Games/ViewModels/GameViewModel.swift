@@ -15,7 +15,7 @@ class GameViewModel {
     // MARK: - Methods
     func loadDataIntoTable(completion: @escaping () -> (), errorHandler: @escaping (LoadDataError) -> ()) {
         NetworkingManagers.shared.fethGames { results in
-            self.gamesVM = results
+            self.gamesVM.append(contentsOf: results)
             completion()
         } errorHandler: { error in
             errorHandler(error)

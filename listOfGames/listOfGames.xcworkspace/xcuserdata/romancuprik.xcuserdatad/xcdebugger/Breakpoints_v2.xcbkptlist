@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4AF7053B-37D0-4CD6-85B7-734CA0D3CDC4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "listOfGames/Managers/API/NetworkingManagers.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7F19783A-E7A0-431B-A61C-4EF97152C793"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "listOfGames/Modules/Games/Views(ViewControllers)/GamesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
