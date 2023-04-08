@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 
 class GamesViewController: UIViewController {
-    var activityIndicator = UIActivityIndicatorView()
-    var isLoadMore = false
     
     //MARK: - Properties
+    var activityIndicator = UIActivityIndicatorView()
+    var isLoadMore = false
     var viewModel = GameViewModel()
     private lazy var gametableView: UITableView = {
         let tableView = UITableView()
@@ -133,7 +133,7 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
                 beginLoadMore()
             }
         }
-        print("offsetY: \(offsetY) contentHeit: \(contentHeit) scrollView: \(scrollView.frame.height)")
+//        print("offsetY: \(offsetY) contentHeit: \(contentHeit) scrollView: \(scrollView.frame.height)")
     }
     
     func beginLoadMore() {

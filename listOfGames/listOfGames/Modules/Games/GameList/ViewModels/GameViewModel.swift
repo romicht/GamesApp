@@ -23,7 +23,13 @@ class GameViewModel {
     }
     
     func loadDataIntoImageView(index: Int, completion: @escaping (UIImage) -> ()) {
-        NetworkingManagers.shared.fetchImage(link: self.gamesVM[index].background_image) { data in
+        NetworkingManagers.shared.fetchImage(link: self.gamesVM[index].backgroundImage) { data in
+            completion(data)
+        }
+    }
+    
+    func loadDataIntoScreenshots(gamesVM: Results, index: Int, completion: @escaping (UIImage) -> ()) {
+        NetworkingManagers.shared.fetchScreenshots(link: gamesVM.shortSreenshots[index].image) { data in
             completion(data)
         }
     }

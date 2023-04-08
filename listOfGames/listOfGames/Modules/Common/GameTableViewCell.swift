@@ -42,6 +42,7 @@ class GameTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     static let identifire = "GameTableViewCell"
+    
     static func nib() -> UINib {
         return UINib(nibName: "GameTableViewCell", bundle: nil)
     }

@@ -64,5 +64,18 @@ class NetworkingManagers {
             }
         }
     }
+    
+    func fetchScreenshots(link urlString: String, completion: @escaping (UIImage) -> ()) {
+        let url = URL(string: urlString)
+        if let cachedImage = cachedDataSource.object(forKey: urlString as NSString) {
+            completion(cachedImage)
+        } else {
+            let data = try? Data(contentsOf: url!)
+            if let image = UIImage(data: data!) {
+            cachedDataSource.setObject(image, forKey: urlString as NSString)
+            completion(image)
+            }
+        }
+    }
 }
-                   
+

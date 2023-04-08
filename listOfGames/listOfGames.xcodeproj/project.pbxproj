@@ -11,6 +11,8 @@
 		71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71237C3529A93E7C001D845E /* UIColorExtension.swift */; };
 		712BF08729C4F05200787A44 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712BF08629C4F05200787A44 /* HeaderView.xib */; };
 		712BF08929C4F63C00787A44 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BF08829C4F63C00787A44 /* HeaderView.swift */; };
+		712C993329E1999D0010D35A /* ScreenshotsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C993129E1999D0010D35A /* ScreenshotsCollectionViewCell.swift */; };
+		712C993429E1999D0010D35A /* ScreenshotsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712C993229E1999D0010D35A /* ScreenshotsCollectionViewCell.xib */; };
 		712CD5DF29B4A3EE00819B5C /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712CD5DD29B4A3EE00819B5C /* GameTableViewCell.swift */; };
 		712CD5E029B4A3EE00819B5C /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712CD5DE29B4A3EE00819B5C /* GameTableViewCell.xib */; };
 		7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7139F7F229A7C30E0029347C /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 		71237C3529A93E7C001D845E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		712BF08629C4F05200787A44 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		712BF08829C4F63C00787A44 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		712C993129E1999D0010D35A /* ScreenshotsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewCell.swift; sourceTree = "<group>"; };
+		712C993229E1999D0010D35A /* ScreenshotsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenshotsCollectionViewCell.xib; sourceTree = "<group>"; };
 		712CD5DD29B4A3EE00819B5C /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		712CD5DE29B4A3EE00819B5C /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		7139F7EF29A7C30E0029347C /* listOfGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listOfGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,32 @@
 				F25CE8B5F47E95EDB5DFEC37 /* Pods-listOfGames.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		712C992829E1844A0010D35A /* GDViewController */ = {
+			isa = PBXGroup;
+			children = (
+				71F0953129D34847005B5596 /* GameDescriptionViewController.xib */,
+				71F0953029D34847005B5596 /* GameDescriptionViewController.swift */,
+			);
+			path = GDViewController;
+			sourceTree = "<group>";
+		};
+		7132306029DB521000BA3105 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				71EB57E329BCC359004A0043 /* Views(ViewControllers) */,
+				71EB57E529BCC385004A0043 /* ViewModels */,
+			);
+			path = GameList;
+			sourceTree = "<group>";
+		};
+		7132306129DB537500BA3105 /* GameDescription */ = {
+			isa = PBXGroup;
+			children = (
+				712C992829E1844A0010D35A /* GDViewController */,
+			);
+			path = GameDescription;
 			sourceTree = "<group>";
 		};
 		7139F7E629A7C30E0029347C = {
@@ -142,8 +172,8 @@
 		7162C90229AD30C10037C813 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				71EB57E529BCC385004A0043 /* ViewModels */,
-				71EB57E329BCC359004A0043 /* Views(ViewControllers) */,
+				7132306029DB521000BA3105 /* GameList */,
+				7132306129DB537500BA3105 /* GameDescription */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -155,6 +185,8 @@
 				712CD5DE29B4A3EE00819B5C /* GameTableViewCell.xib */,
 				712BF08829C4F63C00787A44 /* HeaderView.swift */,
 				712BF08629C4F05200787A44 /* HeaderView.xib */,
+				712C993129E1999D0010D35A /* ScreenshotsCollectionViewCell.swift */,
+				712C993229E1999D0010D35A /* ScreenshotsCollectionViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -179,8 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				7139F80D29A7CCE80029347C /* GamesViewController.swift */,
-				71F0953029D34847005B5596 /* GameDescriptionViewController.swift */,
-				71F0953129D34847005B5596 /* GameDescriptionViewController.xib */,
 			);
 			path = "Views(ViewControllers)";
 			sourceTree = "<group>";
@@ -283,6 +313,7 @@
 			files = (
 				7139F7FF29A7C3120029347C /* LaunchScreen.storyboard in Resources */,
 				7139F7FC29A7C3120029347C /* Assets.xcassets in Resources */,
+				712C993429E1999D0010D35A /* ScreenshotsCollectionViewCell.xib in Resources */,
 				712CD5E029B4A3EE00819B5C /* GameTableViewCell.xib in Resources */,
 				712BF08729C4F05200787A44 /* HeaderView.xib in Resources */,
 				71F0953329D34847005B5596 /* GameDescriptionViewController.xib in Resources */,
@@ -344,6 +375,7 @@
 				7112604A29D2203700F7D21B /* MainTabBarController.swift in Sources */,
 				7139F80E29A7CCE80029347C /* GamesViewController.swift in Sources */,
 				712CD5DF29B4A3EE00819B5C /* GameTableViewCell.swift in Sources */,
+				712C993329E1999D0010D35A /* ScreenshotsCollectionViewCell.swift in Sources */,
 				71EB57F029BCD2E1004A0043 /* NetworkingManagers.swift in Sources */,
 				71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */,
 				7139F81229A7CD3F0029347C /* PersonViewController.swift in Sources */,
