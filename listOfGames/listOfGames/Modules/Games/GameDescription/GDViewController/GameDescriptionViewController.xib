@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uae-7F-fsQ" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1036"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1120"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6qE-dU-iJo">
-                                    <rect key="frame" x="25.5" y="397.5" width="121.5" height="82"/>
+                                    <rect key="frame" x="26" y="397.5" width="121.5" height="82"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ir-dB-O60">
                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="20.5"/>
@@ -122,8 +122,8 @@
                                     </constraints>
                                 </stackView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-Eq-7mj">
-                                    <rect key="frame" x="20" y="525" width="374" height="491"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="Gec-QQ-j0M">
+                                    <rect key="frame" x="20" y="525" width="374" height="575"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gec-QQ-j0M">
                                         <size key="itemSize" width="150" height="150"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -137,7 +137,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uuQ-rS-RnH">
-                                    <rect key="frame" x="25.5" y="5" width="363" height="362.5"/>
+                                    <rect key="frame" x="26" y="5" width="362.5" height="362.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="uuQ-rS-RnH" secondAttribute="height" multiplier="1:1" id="dAl-rJ-Yfa"/>
                                     </constraints>
@@ -152,7 +152,6 @@
                                 <constraint firstItem="5yc-Eq-7mj" firstAttribute="leading" secondItem="uae-7F-fsQ" secondAttribute="leading" constant="20" id="RhP-OA-KOg"/>
                                 <constraint firstItem="6qE-dU-iJo" firstAttribute="top" secondItem="uuQ-rS-RnH" secondAttribute="bottom" constant="30" id="WbW-bg-IMc"/>
                                 <constraint firstItem="uuQ-rS-RnH" firstAttribute="centerX" secondItem="uae-7F-fsQ" secondAttribute="centerX" id="aqf-03-BwU"/>
-                                <constraint firstItem="uuQ-rS-RnH" firstAttribute="height" secondItem="uae-7F-fsQ" secondAttribute="height" multiplier="0.35" id="c97-5P-HII"/>
                                 <constraint firstItem="6qE-dU-iJo" firstAttribute="leading" secondItem="uuQ-rS-RnH" secondAttribute="leading" id="cd5-KK-f0c"/>
                                 <constraint firstItem="MGW-2s-IWK" firstAttribute="centerX" secondItem="uae-7F-fsQ" secondAttribute="centerX" id="iQg-e2-SRn"/>
                                 <constraint firstAttribute="bottom" secondItem="5yc-Eq-7mj" secondAttribute="bottom" constant="20" id="lyu-CF-57V"/>
@@ -162,7 +161,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="uae-7F-fsQ" firstAttribute="leading" secondItem="acC-EL-AzC" secondAttribute="leading" id="M46-qO-vkg"/>
-                        <constraint firstAttribute="height" secondItem="uae-7F-fsQ" secondAttribute="height" multiplier="0.864865" id="NNu-P3-tGD"/>
+                        <constraint firstAttribute="height" secondItem="uae-7F-fsQ" secondAttribute="height" multiplier="0.8" id="NNu-P3-tGD"/>
                         <constraint firstItem="uae-7F-fsQ" firstAttribute="centerX" secondItem="acC-EL-AzC" secondAttribute="centerX" id="U4i-r1-gRc"/>
                         <constraint firstAttribute="bottom" secondItem="uae-7F-fsQ" secondAttribute="bottom" id="WhQ-pI-1bz"/>
                         <constraint firstAttribute="width" secondItem="uae-7F-fsQ" secondAttribute="width" id="XPX-5f-GkF"/>
@@ -176,6 +175,7 @@
             <constraints>
                 <constraint firstItem="acC-EL-AzC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2yJ-WR-JJU"/>
                 <constraint firstAttribute="bottom" secondItem="acC-EL-AzC" secondAttribute="bottom" id="Nce-OG-VTl"/>
+                <constraint firstItem="uuQ-rS-RnH" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.443154" id="Tgv-QJ-ZQi"/>
                 <constraint firstItem="acC-EL-AzC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VYX-rI-fhh"/>
                 <constraint firstItem="acC-EL-AzC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ndN-BM-Ch9"/>
                 <constraint firstItem="acC-EL-AzC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tt9-ip-9Mz"/>

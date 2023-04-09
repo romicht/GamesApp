@@ -39,6 +39,7 @@ class GameDescriptionViewController: UIViewController {
         screeshotsCollection.delegate = self
         screeshotsCollection.dataSource = self
             screeshotsCollection.register(UINib(nibName: "ScreenshotsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScreenshotsCollectionViewCell")
+        setupActiveIndicator()
     }
     
     // MARK: - Methods
@@ -54,9 +55,17 @@ class GameDescriptionViewController: UIViewController {
             self.genre.text? += "\(genre.lowercased()) "
         }
     }
+    
+    func setupActiveIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = UIColor.red
+        self.view.addSubview(activityIndicator)
+    }
 }
 
-extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScreenshotsCollectionViewCell", for: indexPath) as! ScreenshotsCollectionViewCell
         self.activityIndicator.startAnimating()
@@ -76,4 +85,17 @@ extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionV
         guard let model = self.model else { return 0 }
         return model.shortSreenshots.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (self.screeshotsCollection.bounds.width / 2) - 10, height: (self.screeshotsCollection.bounds.width / 2) - 10)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    }
+    
 }
