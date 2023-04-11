@@ -57,24 +57,18 @@ class NetworkingManagers {
         if let cachedImage = cachedDataSource.object(forKey: urlString as NSString) {
             completion(cachedImage)
         } else {
-            let data = try? Data(contentsOf: url!)
-            if let image = UIImage(data: data!) {
-            cachedDataSource.setObject(image, forKey: urlString as NSString)
-            completion(image)
-            }
-        }
-    }
-    
-    func fetchScreenshots(link urlString: String, completion: @escaping (UIImage) -> ()) {
-        let url = URL(string: urlString)
-        if let cachedImage = cachedDataSource.object(forKey: urlString as NSString) {
-            completion(cachedImage)
-        } else {
-            let data = try? Data(contentsOf: url!)
-            if let image = UIImage(data: data!) {
-            cachedDataSource.setObject(image, forKey: urlString as NSString)
-            completion(image)
-            }
+            URLSession.shared.dataTask(with: URLRequest(url: url!)) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("something went wrong")
+                    return
+                }
+                if let image = UIImage(data: data) {
+                    self.cachedDataSource.setObject(image, forKey: urlString as NSString)
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }.resume()
         }
     }
 }

@@ -63,4 +63,8 @@ class GameTableViewCell: UITableViewCell {
     func addImage(image: UIImage) {
         self.gameImage.image = image
     }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.accessoryType = .none
+//    }
 }

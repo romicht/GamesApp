@@ -28,7 +28,7 @@ class GameDescriptionViewController: UIViewController {
     @IBOutlet weak var screeshotsCollection: UICollectionView!
     
     //MARK: - Properties
-    var viewModel = GameViewModel()
+    var viewModel = GameDescriptionViewModel()
     var model: Results?
     var activityIndicator = UIActivityIndicatorView()
     
@@ -98,4 +98,12 @@ extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionV
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let image = self.model?.shortSreenshots[indexPath.item].image else { return }
+        if let image = NetworkingManagers.shared.cachedDataSource.object(forKey: image as NSString) {
+            let largeScreenshotVC = FullScreenImageViewController()
+            largeScreenshotVC.mainImage = image
+            navigationController?.pushViewController(largeScreenshotVC, animated: true)
+        }
+    }
 }

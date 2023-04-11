@@ -91,6 +91,9 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        cell.selectedBackgroundView = view
         cell.setNumberOfRaw(number: indexPath.row)
         self.activityIndicator.startAnimating()
         self.view.isUserInteractionEnabled = false

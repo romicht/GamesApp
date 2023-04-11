@@ -27,11 +27,5 @@ class GameViewModel {
             completion(data)
         }
     }
-    
-    func loadDataIntoScreenshots(gamesVM: Results, index: Int, completion: @escaping (UIImage) -> ()) {
-        NetworkingManagers.shared.fetchScreenshots(link: gamesVM.shortSreenshots[index].image) { data in
-            completion(data)
-        }
-    }
 }
 
