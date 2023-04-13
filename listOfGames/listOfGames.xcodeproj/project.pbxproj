@@ -25,6 +25,7 @@
 		71E1A47D29E47BFB00A7A531 /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1A47C29E47BFB00A7A531 /* GameDescriptionViewModel.swift */; };
 		71E1A48129E4969C00A7A531 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1A47F29E4969C00A7A531 /* FullScreenImageViewController.swift */; };
 		71E1A48229E4969C00A7A531 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1A48029E4969C00A7A531 /* FullScreenImageViewController.xib */; };
+		71E754D529E72D3A00E7FE11 /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E754D429E72D3A00E7FE11 /* DynamicHeightCollectionView.swift */; };
 		71EB57E729BCC3BA004A0043 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB57E629BCC3BA004A0043 /* GameViewModel.swift */; };
 		71EB57F029BCD2E1004A0043 /* NetworkingManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB57EF29BCD2E1004A0043 /* NetworkingManagers.swift */; };
 		71EB57F329BCD313004A0043 /* GameListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB57F229BCD313004A0043 /* GameListModels.swift */; };
@@ -58,6 +59,7 @@
 		71E1A47C29E47BFB00A7A531 /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 		71E1A47F29E4969C00A7A531 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		71E1A48029E4969C00A7A531 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
+		71E754D429E72D3A00E7FE11 /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicHeightCollectionView.swift; path = "../../../../../../../Downloads/DynamicHeightCollectionView-master/DynamicHeightCollectionView/Example/DynamicHeightCollectionView.swift"; sourceTree = "<group>"; };
 		71EB57E629BCC3BA004A0043 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		71EB57EF29BCD2E1004A0043 /* NetworkingManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagers.swift; sourceTree = "<group>"; };
 		71EB57F229BCD313004A0043 /* GameListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListModels.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				71F0953029D34847005B5596 /* GameDescriptionViewController.swift */,
 				71F0953129D34847005B5596 /* GameDescriptionViewController.xib */,
+				71E754D429E72D3A00E7FE11 /* DynamicHeightCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				712C993329E1999D0010D35A /* ScreenshotsCollectionViewCell.swift in Sources */,
 				71EB57F029BCD2E1004A0043 /* NetworkingManagers.swift in Sources */,
 				71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */,
+				71E754D529E72D3A00E7FE11 /* DynamicHeightCollectionView.swift in Sources */,
 				71F83A1529E2FCC70036E450 /* DevelopersViewController.swift in Sources */,
 				7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */,
 				71F83A1729E2FCE60036E450 /* DevelopersViewModel.swift in Sources */,

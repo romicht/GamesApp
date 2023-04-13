@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uae-7F-fsQ" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1120"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6qE-dU-iJo">
                                     <rect key="frame" x="26" y="397.5" width="121.5" height="82"/>
@@ -121,8 +121,8 @@
                                         <constraint firstItem="LrZ-TH-FeS" firstAttribute="width" secondItem="0Oy-rE-CUv" secondAttribute="width" id="nox-42-NyP"/>
                                     </constraints>
                                 </stackView>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-Eq-7mj">
-                                    <rect key="frame" x="20" y="525" width="374" height="575"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-Eq-7mj">
+                                    <rect key="frame" x="20" y="525" width="374" height="655"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gec-QQ-j0M">
                                         <size key="itemSize" width="150" height="150"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -154,6 +154,7 @@
                                 <constraint firstItem="uuQ-rS-RnH" firstAttribute="centerX" secondItem="uae-7F-fsQ" secondAttribute="centerX" id="aqf-03-BwU"/>
                                 <constraint firstItem="6qE-dU-iJo" firstAttribute="leading" secondItem="uuQ-rS-RnH" secondAttribute="leading" id="cd5-KK-f0c"/>
                                 <constraint firstItem="MGW-2s-IWK" firstAttribute="centerX" secondItem="uae-7F-fsQ" secondAttribute="centerX" id="iQg-e2-SRn"/>
+                                <constraint firstAttribute="height" constant="1200" id="ial-2g-1N9"/>
                                 <constraint firstAttribute="bottom" secondItem="5yc-Eq-7mj" secondAttribute="bottom" constant="20" id="lyu-CF-57V"/>
                                 <constraint firstItem="MGW-2s-IWK" firstAttribute="top" secondItem="6qE-dU-iJo" secondAttribute="bottom" constant="20" id="pah-iv-3dl"/>
                             </constraints>
@@ -161,7 +162,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="uae-7F-fsQ" firstAttribute="leading" secondItem="acC-EL-AzC" secondAttribute="leading" id="M46-qO-vkg"/>
-                        <constraint firstAttribute="height" secondItem="uae-7F-fsQ" secondAttribute="height" multiplier="0.8" id="NNu-P3-tGD"/>
                         <constraint firstItem="uae-7F-fsQ" firstAttribute="centerX" secondItem="acC-EL-AzC" secondAttribute="centerX" id="U4i-r1-gRc"/>
                         <constraint firstAttribute="bottom" secondItem="uae-7F-fsQ" secondAttribute="bottom" id="WhQ-pI-1bz"/>
                         <constraint firstAttribute="width" secondItem="uae-7F-fsQ" secondAttribute="width" id="XPX-5f-GkF"/>

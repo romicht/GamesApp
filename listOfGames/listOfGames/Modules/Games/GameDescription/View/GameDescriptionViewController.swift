@@ -80,6 +80,7 @@ extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionV
         }
         return cell
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let model = self.model else { return 0 }
