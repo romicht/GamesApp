@@ -17,8 +17,8 @@ class GameTableViewCell: UITableViewCell {
             conteinerView.layer.shadowRadius = 16
             conteinerView.layer.shadowOpacity = 0.3
             conteinerView.layer.cornerRadius = 16
-            conteinerView.layer.borderWidth = 1
-            conteinerView.layer.borderColor = UIColor.black.cgColor
+//            conteinerView.layer.borderWidth = 1
+//            conteinerView.layer.borderColor = UIColor.black.cgColor
         }
     }
     @IBOutlet weak var number: UILabel!

@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         generateVCs()
         generateNC()
         self.setViewControllers([gameNC, personNC, settingNC], animated: true)
@@ -27,7 +27,7 @@ class MainTabBarController: UITabBarController {
     
     private func generateVCs() {
         self.gameVC = generateVC(viewController: GamesViewController(), title: "Games", image: UIImage(systemName: "gamecontroller"))
-        self.personVC = generateVC(viewController: DevelopersViewModel(), title: "Developers", image: UIImage(systemName: "person"))
+        self.personVC = generateVC(viewController: DevelopersViewController(), title: "Developers", image: UIImage(systemName: "person"))
         self.settingVC = generateVC(viewController: SettingsViewController(), title: "Setting", image: UIImage(systemName: "seal"))
     }
     
