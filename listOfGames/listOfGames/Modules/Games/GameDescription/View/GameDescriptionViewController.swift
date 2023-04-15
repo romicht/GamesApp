@@ -26,6 +26,7 @@ class GameDescriptionViewController: UIViewController {
         }
     }
     @IBOutlet weak var screeshotsCollection: UICollectionView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     //MARK: - Properties
     var viewModel = GameDescriptionViewModel()
@@ -40,6 +41,14 @@ class GameDescriptionViewController: UIViewController {
         screeshotsCollection.dataSource = self
             screeshotsCollection.register(UINib(nibName: "ScreenshotsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScreenshotsCollectionViewCell")
         setupActiveIndicator()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        self.adjustHightCollectionView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.adjustHightCollectionView()
     }
     
     // MARK: - Methods
@@ -63,6 +72,12 @@ class GameDescriptionViewController: UIViewController {
         activityIndicator.color = UIColor.red
         self.view.addSubview(activityIndicator)
     }
+    
+    func adjustHightCollectionView() {
+        let height = self.screeshotsCollection.collectionViewLayout.collectionViewContentSize.height
+        self.heightConstraint.constant = height
+        self.view.layoutIfNeeded()
+    }
 }
 
 extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -81,7 +96,6 @@ extension GameDescriptionViewController: UICollectionViewDelegate, UICollectionV
         return cell
     }
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let model = self.model else { return 0 }
         return model.shortSreenshots.count
