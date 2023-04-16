@@ -20,7 +20,7 @@ class DevelopersViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(DevelopersTableViewCell.nib().self,
                            forCellReuseIdentifier: DevelopersTableViewCell.identifire)
-//        tableView.register(DevelopersHeaderView.nib().self, forHeaderFooterViewReuseIdentifier: "DevelopersHeaderView")
+        tableView.register(DevelopersHeaderView.nib().self, forHeaderFooterViewReuseIdentifier: "DevelopersHeaderView")
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,20 +111,20 @@ extension DevelopersViewController: UITableViewDelegate, UITableViewDataSource, 
         return 120
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! HeaderView
-//        return view
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DevelopersHeaderView") as! DevelopersHeaderView
+        return view
+    }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 20
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let gameDescriptionVC = GameDescriptionViewController()
-//        gameDescriptionVC.model = viewModel.gamesVM[indexPath.row]
-//        navigationController?.pushViewController(gameDescriptionVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let DeveloperDescriptionVC = DeveloperDescriptionViewController()
+        DeveloperDescriptionVC.model = viewModel.developersVM[indexPath.row]
+        navigationController?.pushViewController(DeveloperDescriptionVC, animated: true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y

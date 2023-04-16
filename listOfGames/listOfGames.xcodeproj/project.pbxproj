@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71073CCF29EC54AE00F8B9BA /* DevelopersHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71073CCE29EC54AE00F8B9BA /* DevelopersHeaderView.xib */; };
+		71073CD529EC5EE000F8B9BA /* DeveloperDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71073CD329EC5EE000F8B9BA /* DeveloperDescriptionViewController.swift */; };
+		71073CD629EC5EE000F8B9BA /* DeveloperDescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71073CD429EC5EE000F8B9BA /* DeveloperDescriptionViewController.xib */; };
+		71073CDB29EC68BA00F8B9BA /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71073CDA29EC68BA00F8B9BA /* GameDescriptionViewModel.swift */; };
 		7112604A29D2203700F7D21B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112604929D2203700F7D21B /* MainTabBarController.swift */; };
 		71237C3629A93E7C001D845E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71237C3529A93E7C001D845E /* UIColorExtension.swift */; };
+		712B796A29EC51FA006A6ABE /* DevelopersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B796929EC51FA006A6ABE /* DevelopersHeaderView.swift */; };
 		712BF08729C4F05200787A44 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712BF08629C4F05200787A44 /* HeaderView.xib */; };
 		712BF08929C4F63C00787A44 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712BF08829C4F63C00787A44 /* HeaderView.swift */; };
 		712C993329E1999D0010D35A /* ScreenshotsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C993129E1999D0010D35A /* ScreenshotsCollectionViewCell.swift */; };
@@ -25,7 +30,6 @@
 		71AE9D3F29EAE2B900152E1A /* DevelopersListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE9D3E29EAE2B900152E1A /* DevelopersListModel.swift */; };
 		71AE9D4229EAED1100152E1A /* DevelopersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE9D4029EAED1100152E1A /* DevelopersTableViewCell.swift */; };
 		71AE9D4329EAED1100152E1A /* DevelopersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AE9D4129EAED1100152E1A /* DevelopersTableViewCell.xib */; };
-		71E1A47D29E47BFB00A7A531 /* GameDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1A47C29E47BFB00A7A531 /* GameDescriptionViewModel.swift */; };
 		71E1A48129E4969C00A7A531 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1A47F29E4969C00A7A531 /* FullScreenImageViewController.swift */; };
 		71E1A48229E4969C00A7A531 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E1A48029E4969C00A7A531 /* FullScreenImageViewController.xib */; };
 		71EB57E729BCC3BA004A0043 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB57E629BCC3BA004A0043 /* GameViewModel.swift */; };
@@ -39,8 +43,13 @@
 
 /* Begin PBXFileReference section */
 		364F437933AA2EC09209AED7 /* Pods-listOfGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listOfGames.debug.xcconfig"; path = "Target Support Files/Pods-listOfGames/Pods-listOfGames.debug.xcconfig"; sourceTree = "<group>"; };
+		71073CCE29EC54AE00F8B9BA /* DevelopersHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevelopersHeaderView.xib; sourceTree = "<group>"; };
+		71073CD329EC5EE000F8B9BA /* DeveloperDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperDescriptionViewController.swift; sourceTree = "<group>"; };
+		71073CD429EC5EE000F8B9BA /* DeveloperDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeveloperDescriptionViewController.xib; sourceTree = "<group>"; };
+		71073CDA29EC68BA00F8B9BA /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 		7112604929D2203700F7D21B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		71237C3529A93E7C001D845E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		712B796929EC51FA006A6ABE /* DevelopersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersHeaderView.swift; sourceTree = "<group>"; };
 		712BF08629C4F05200787A44 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		712BF08829C4F63C00787A44 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		712C993129E1999D0010D35A /* ScreenshotsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -61,7 +70,6 @@
 		71AE9D3E29EAE2B900152E1A /* DevelopersListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersListModel.swift; sourceTree = "<group>"; };
 		71AE9D4029EAED1100152E1A /* DevelopersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersTableViewCell.swift; sourceTree = "<group>"; };
 		71AE9D4129EAED1100152E1A /* DevelopersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevelopersTableViewCell.xib; sourceTree = "<group>"; };
-		71E1A47C29E47BFB00A7A531 /* GameDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewModel.swift; sourceTree = "<group>"; };
 		71E1A47F29E4969C00A7A531 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		71E1A48029E4969C00A7A531 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 		71EB57E629BCC3BA004A0043 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
@@ -96,10 +104,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		712C992829E1844A0010D35A /* ViewModel */ = {
+		71073CD029EC5DB700F8B9BA /* DeveloperDescription */ = {
 			isa = PBXGroup;
 			children = (
-				71E1A47C29E47BFB00A7A531 /* GameDescriptionViewModel.swift */,
+				71073CD229EC5E2E00F8B9BA /* View */,
+			);
+			path = DeveloperDescription;
+			sourceTree = "<group>";
+		};
+		71073CD229EC5E2E00F8B9BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71073CD329EC5EE000F8B9BA /* DeveloperDescriptionViewController.swift */,
+				71073CD429EC5EE000F8B9BA /* DeveloperDescriptionViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71073CD929EC687700F8B9BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71073CDA29EC68BA00F8B9BA /* GameDescriptionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -116,7 +141,7 @@
 		7132306129DB537500BA3105 /* GameDescription */ = {
 			isa = PBXGroup;
 			children = (
-				712C992829E1844A0010D35A /* ViewModel */,
+				71073CD929EC687700F8B9BA /* ViewModel */,
 				71E1A47B29E47B5900A7A531 /* View */,
 			);
 			path = GameDescription;
@@ -205,6 +230,8 @@
 				71E1A48029E4969C00A7A531 /* FullScreenImageViewController.xib */,
 				71AE9D4029EAED1100152E1A /* DevelopersTableViewCell.swift */,
 				71AE9D4129EAED1100152E1A /* DevelopersTableViewCell.xib */,
+				712B796929EC51FA006A6ABE /* DevelopersHeaderView.swift */,
+				71073CCE29EC54AE00F8B9BA /* DevelopersHeaderView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -220,6 +247,7 @@
 		7162C90629AD31E90037C813 /* Developers */ = {
 			isa = PBXGroup;
 			children = (
+				71073CD029EC5DB700F8B9BA /* DeveloperDescription */,
 				71AE9D3D29EADE3900152E1A /* DevelopersList */,
 			);
 			path = Developers;
@@ -367,6 +395,8 @@
 				71AE9D4329EAED1100152E1A /* DevelopersTableViewCell.xib in Resources */,
 				7139F7FF29A7C3120029347C /* LaunchScreen.storyboard in Resources */,
 				71E1A48229E4969C00A7A531 /* FullScreenImageViewController.xib in Resources */,
+				71073CCF29EC54AE00F8B9BA /* DevelopersHeaderView.xib in Resources */,
+				71073CD629EC5EE000F8B9BA /* DeveloperDescriptionViewController.xib in Resources */,
 				7139F7FC29A7C3120029347C /* Assets.xcassets in Resources */,
 				712C993429E1999D0010D35A /* ScreenshotsCollectionViewCell.xib in Resources */,
 				712CD5E029B4A3EE00819B5C /* GameTableViewCell.xib in Resources */,
@@ -425,9 +455,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71EB57E729BCC3BA004A0043 /* GameViewModel.swift in Sources */,
+				71073CDB29EC68BA00F8B9BA /* GameDescriptionViewModel.swift in Sources */,
 				71EB57F329BCD313004A0043 /* GameListModels.swift in Sources */,
 				71F0953229D34847005B5596 /* GameDescriptionViewController.swift in Sources */,
-				71E1A47D29E47BFB00A7A531 /* GameDescriptionViewModel.swift in Sources */,
 				7112604A29D2203700F7D21B /* MainTabBarController.swift in Sources */,
 				71E1A48129E4969C00A7A531 /* FullScreenImageViewController.swift in Sources */,
 				71AE9D3F29EAE2B900152E1A /* DevelopersListModel.swift in Sources */,
@@ -439,9 +469,11 @@
 				71F83A1529E2FCC70036E450 /* DevelopersViewController.swift in Sources */,
 				71AE9D4229EAED1100152E1A /* DevelopersTableViewCell.swift in Sources */,
 				7139F7F329A7C30E0029347C /* AppDelegate.swift in Sources */,
+				71073CD529EC5EE000F8B9BA /* DeveloperDescriptionViewController.swift in Sources */,
 				71F83A1729E2FCE60036E450 /* DevelopersViewModel.swift in Sources */,
 				7139F81029A7CD1C0029347C /* SettingsViewController.swift in Sources */,
 				713AD9EB29BF8E2A006B0601 /* Constants.swift in Sources */,
+				712B796A29EC51FA006A6ABE /* DevelopersHeaderView.swift in Sources */,
 				712BF08929C4F63C00787A44 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

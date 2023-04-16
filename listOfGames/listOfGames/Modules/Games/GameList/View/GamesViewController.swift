@@ -118,7 +118,7 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 25
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

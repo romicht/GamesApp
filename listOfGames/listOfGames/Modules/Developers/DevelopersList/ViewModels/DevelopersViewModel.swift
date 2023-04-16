@@ -23,9 +23,8 @@ class DevelopersViewModel: UIViewController {
     }
     
     func loadDataIntoImageView(index: Int, completion: @escaping (UIImage) -> ()) {
-        if let logo = self.developersVM[index].developerImage  {
-            print(logo)
-        NetworkingManagers.shared.fetchImage(link: logo) { data in
+        if let developerImage = self.developersVM[index].developerImage  {
+        NetworkingManagers.shared.fetchImage(link: developerImage) { data in
             completion(data) }
         } else {
             completion(UIImage(named: "ImageNotFound")!)

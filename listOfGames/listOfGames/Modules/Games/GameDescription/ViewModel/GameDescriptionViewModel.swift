@@ -2,7 +2,7 @@
 //  GameDescriptionViewModel.swift
 //  listOfGames
 //
-//  Created by Роман Цуприк on 10.04.23.
+//  Created by Роман Цуприк on 16.04.23.
 //
 
 import UIKit
@@ -16,3 +16,4 @@ class GameDescriptionViewModel {
         }
     }
 }
+

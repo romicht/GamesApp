@@ -43,10 +43,6 @@ class GameDescriptionViewController: UIViewController {
         setupActiveIndicator()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        self.adjustHightCollectionView()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         self.adjustHightCollectionView()
     }
