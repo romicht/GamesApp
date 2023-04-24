@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G730" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoritesGamesNew" representedClassName="FavoritesGamesNew" syncable="YES">
+        <attribute name="backgroundImage" optional="YES" attributeType="String"/>
+        <attribute name="genres" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="released" optional="YES" attributeType="String"/>
+        <attribute name="shortScreenshots" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FavoritesGamesNew" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
+</model>

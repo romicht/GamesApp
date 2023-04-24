@@ -28,7 +28,7 @@ class MainTabBarController: UITabBarController {
     private func generateVCs() {
         self.gameVC = generateVC(viewController: GamesViewController(), title: "Games", image: UIImage(systemName: "gamecontroller"))
         self.personVC = generateVC(viewController: DevelopersViewController(), title: "Developers", image: UIImage(systemName: "person"))
-        self.settingVC = generateVC(viewController: SettingsViewController(), title: "Setting", image: UIImage(systemName: "seal"))
+        self.settingVC = generateVC(viewController: FavoritesViewController(), title: "Favorites", image: UIImage(systemName: "star"))
     }
     
     private func generateNC() {
