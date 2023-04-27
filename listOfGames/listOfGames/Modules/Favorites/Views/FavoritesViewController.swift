@@ -11,7 +11,7 @@ import CoreData
 class FavoritesViewController: UIViewController {
     
     //MARK: - Properties
-//    var activityIndicator = UIActivityIndicatorView()
+    var activityIndicator = UIActivityIndicatorView()
     var viewModel = FavoritesViewModel()
     var model = [Favorites]()
     private lazy var gametableView: UITableView = {
@@ -32,13 +32,15 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(gametableView)
         constraint()
-//        setupActiveIndicator()
-//        self.activityIndicator.startAnimating()
-//        self.view.isUserInteractionEnabled = false
+        setupActiveIndicator()
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        self.activityIndicator.stopAnimating()
+        self.view.isUserInteractionEnabled = true
     }
     
     // MARK: - Methods
@@ -56,13 +58,13 @@ class FavoritesViewController: UIViewController {
         }
     }
     
-//    func setupActiveIndicator() {
-//        activityIndicator.center = self.view.center
-//        activityIndicator.hidesWhenStopped = true
-//        activityIndicator.style = .large
-//        activityIndicator.color = UIColor.red
-//        self.view.addSubview(activityIndicator)
-//    }
+    func setupActiveIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.color = UIColor.red
+        self.view.addSubview(activityIndicator)
+    }
 }
 
 // MARK: - Extension
@@ -78,18 +80,20 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, U
         view.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = view
         cell.setNumberOfRaw(number: indexPath.row)
-//        self.activityIndicator.startAnimating()
-//        self.view.isUserInteractionEnabled = false
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
         DispatchQueue.main.async {
             if let linkImage = self.model[indexPath.row].backgroudImage {
                 self.viewModel.loadDataIntoImageView(link: linkImage) { [weak self] image in
                     cell.addImage(image: image)
-//                    self?.activityIndicator.stopAnimating()
-//                    self?.view.isUserInteractionEnabled = true
+                    self?.activityIndicator.stopAnimating()
+                    self?.view.isUserInteractionEnabled = true
                 }
             }
         }
         cell.configureFavorite(with: model[indexPath.row])
+        cell.isInFavorites = true
+        cell.configureMark(mark: cell.isInFavorites)
         return cell
     }
     
@@ -112,30 +116,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, U
 //        navigationController?.pushViewController(gameDescriptionVC, animated: true)
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeit = gametableView.contentSize.height
-//        if offsetY > 100 + contentHeit - scrollView.frame.height {
-//            self.gametableView.tableFooterView = createSpinnerFooter()
-//            if !isLoadMore {
-//                beginLoadMore()
-//            }
-//        }
-//        print("offsetY: \(offsetY) contentHeit: \(contentHeit) scrollView: \(scrollView.frame.height)")
-//    }
-//
-//    func beginLoadMore() {
-//        isLoadMore = true
-//        loadData()
-//    }
-    
-//    private func createSpinnerFooter() -> UIView {
-//        let footerView = UIView(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: 100))
-//        let spinner = UIActivityIndicatorView()
-//        spinner.center = footerView.center
-//        footerView.addSubview(spinner)
-//        spinner.startAnimating()
-//        return footerView
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    }
 }
 

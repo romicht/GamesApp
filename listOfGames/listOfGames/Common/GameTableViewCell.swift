@@ -39,7 +39,9 @@ class GameTableViewCell: UITableViewCell {
             if !isInFavorites {
             self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
                 self.favorites.alpha = 0.3
-            
+            } else {
+                self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                self.favorites.alpha = 1
             }
         }
     }
@@ -63,9 +65,15 @@ class GameTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func addToFavorites(_ sender: Any) {
-        pressAddToFavorites()
-        saveGame()
-//        deleteGame()
+        if self.isInFavorites {
+            removeMarkFavorites()
+            deleteGame()
+            self.isInFavorites = false
+        } else {
+            setMarkFavorites()
+            saveGame()
+            self.isInFavorites = true
+        }
     }
     
     //MARK: - Methods
@@ -82,6 +90,16 @@ class GameTableViewCell: UITableViewCell {
        self.gameRatings.text = String(model.rating)
     }
     
+    func configureMark(mark: Bool) {
+        if !mark {
+            self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
+                self.favorites.alpha = 0.3
+            } else {
+                self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                self.favorites.alpha = 1
+            }
+    }
+    
     func setNumberOfRaw(number: Int) {
         self.number.text = String(number + 1)
     }
@@ -90,17 +108,14 @@ class GameTableViewCell: UITableViewCell {
         self.gameImage.image = image
     }
     
-    func pressAddToFavorites() {
-        if self.isInFavorites {
-            self.isInFavorites = false
-            self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
-            self.favorites.alpha = 0.3
-        } else {
-            self.isInFavorites = true
-            self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            self.favorites.alpha = 1
-        }
-        print(self.isInFavorites)
+    func setMarkFavorites() {
+        self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        self.favorites.alpha = 1
+    }
+    
+    func removeMarkFavorites() {
+        self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
+        self.favorites.alpha = 0.3
     }
     
     func saveGame() {
@@ -123,19 +138,21 @@ class GameTableViewCell: UITableViewCell {
         CoreDataManagers.instance.saveContext()
     }
     
-//    func deleteGame() {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FavoritesGames")
-//        do {
-//            let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
-//            for result in results as! [FavoritesGames] {
-//                CoreDataManagers.instance.context.delete(result)
-//            }
-//        } catch {
-//            print(error)
-//        }
-//        CoreDataManagers.instance.saveContext()
-//    }
+    func deleteGame() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+        do {
+            let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
+            for result in results as! [Favorites] {
+                if self.gameName.text == result.name {
+                    CoreDataManagers.instance.context.delete(result)
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
+
 
 
 

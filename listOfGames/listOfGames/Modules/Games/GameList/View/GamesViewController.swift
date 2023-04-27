@@ -38,6 +38,10 @@ class GamesViewController: UIViewController {
         self.view.isUserInteractionEnabled = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.gametableView.reloadData()
+    }
+    
     // MARK: - Methods
     private func loadData() {
         self.viewModel.loadDataIntoTable { [weak self] in
@@ -104,6 +108,8 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
                 self?.view.isUserInteractionEnabled = true
             }
         }
+        cell.isInFavorites = self.viewModel.checkFavoriteGame(nameOfGames: viewModel.gamesVM[indexPath.row].name)
+        cell.configureMark(mark: cell.isInFavorites)
         cell.configure(with: viewModel.gamesVM[indexPath.row])
         return cell
     }

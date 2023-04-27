@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameViewModel {
     
@@ -26,6 +27,21 @@ class GameViewModel {
         NetworkingManagers.shared.fetchImage(link: self.gamesVM[index].backgroundImage) { data in
             completion(data)
         }
+    }
+    
+    func checkFavoriteGame(nameOfGames: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+        do {
+            let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
+            for result in results as! [Favorites] {
+                if nameOfGames == result.name {
+                    return true
+                }
+            }
+        } catch {
+            print(error)
+        }
+        return false
     }
 }
 
