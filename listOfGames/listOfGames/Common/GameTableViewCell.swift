@@ -14,14 +14,11 @@ class GameTableViewCell: UITableViewCell {
     var isInFavorites: Bool = false
     var favoritGame: Favorites?
     var model: Results?
+    weak var delegate: TableViewCellDelegate?
     
     //MARK: - Outlets
     @IBOutlet weak var conteinerView: UIView! {
         didSet {
-            conteinerView.layer.shadowColor = UIColor.darkGray.cgColor
-            conteinerView.layer.shadowOffset = CGSize(width: 1, height: 1)
-            conteinerView.layer.shadowRadius = 16
-            conteinerView.layer.shadowOpacity = 0.3
             conteinerView.layer.cornerRadius = 16
         }
     }
@@ -38,10 +35,8 @@ class GameTableViewCell: UITableViewCell {
         didSet {
             if !isInFavorites {
             self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
-                self.favorites.alpha = 0.3
             } else {
                 self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
-                self.favorites.alpha = 1
             }
         }
     }
@@ -93,10 +88,8 @@ class GameTableViewCell: UITableViewCell {
     func configureMark(mark: Bool) {
         if !mark {
             self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
-                self.favorites.alpha = 0.3
             } else {
                 self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
-                self.favorites.alpha = 1
             }
     }
     
@@ -110,12 +103,10 @@ class GameTableViewCell: UITableViewCell {
     
     func setMarkFavorites() {
         self.favorites.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        self.favorites.alpha = 1
     }
     
     func removeMarkFavorites() {
         self.favorites.setImage(UIImage(systemName: "star"), for: .normal)
-        self.favorites.alpha = 0.3
     }
     
     func saveGame() {
@@ -136,6 +127,7 @@ class GameTableViewCell: UITableViewCell {
         }
         managedObject.released = self.model?.released
         CoreDataManagers.instance.saveContext()
+        self.delegate?.showAlert(text: "Добавлено в избранное")
     }
     
     func deleteGame() {
@@ -143,13 +135,16 @@ class GameTableViewCell: UITableViewCell {
         do {
             let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
             for result in results as! [Favorites] {
-                if self.gameName.text == result.name {
+                if self.id.text == String(result.id) {
                     CoreDataManagers.instance.context.delete(result)
                 }
             }
         } catch {
             print(error)
         }
+        CoreDataManagers.instance.saveContext()
+        self.delegate?.reloadTableData()
+        self.delegate?.showAlert(text: "Удалено из избранного")
     }
 }
 

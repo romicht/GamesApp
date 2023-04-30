@@ -74,6 +74,7 @@ class GamesViewController: UIViewController {
     private func constraint() {
         self.gametableView.snp.updateConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
+//            make.bottom.equalToSuperview().inset(100)
         }
     }
     
@@ -87,7 +88,7 @@ class GamesViewController: UIViewController {
 }
 
 // MARK: - Extension
-extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, TableViewCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.gamesVM.count
@@ -95,6 +96,7 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
+        cell.delegate = self
         let view = UIView()
         view.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = view
@@ -108,7 +110,7 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
                 self?.view.isUserInteractionEnabled = true
             }
         }
-        cell.isInFavorites = self.viewModel.checkFavoriteGame(nameOfGames: viewModel.gamesVM[indexPath.row].name)
+        cell.isInFavorites = self.viewModel.checkFavoriteGame(gameID: viewModel.gamesVM[indexPath.row].id)
         cell.configureMark(mark: cell.isInFavorites)
         cell.configure(with: viewModel.gamesVM[indexPath.row])
         return cell
@@ -142,7 +144,6 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
                 beginLoadMore()
             }
         }
-//        print("offsetY: \(offsetY) contentHeit: \(contentHeit) scrollView: \(scrollView.frame.height)")
     }
     
     func beginLoadMore() {
@@ -157,5 +158,16 @@ extension GamesViewController: UITableViewDelegate, UITableViewDataSource, UIScr
         footerView.addSubview(spinner)
         spinner.startAnimating()
         return footerView
+    }
+    
+    func showAlert(text: String) {
+        let alertController = UIAlertController(title: "", message: text, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default) {_ in
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func reloadTableData() {
     }
 }

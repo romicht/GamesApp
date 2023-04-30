@@ -139,13 +139,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		711F589329F57671003A3581 /* Entity */ = {
+		711F589329F57671003A3581 /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
 				7138484B29F6C58500261AA5 /* Favorites+CoreDataClass.swift */,
 				7138484C29F6C58500261AA5 /* Favorites+CoreDataProperties.swift */,
+				7138484029F6C3D300261AA5 /* listOfGames.xcdatamodeld */,
 			);
-			path = Entity;
+			path = CoreDataFiles;
 			sourceTree = "<group>";
 		};
 		711F589429F57792003A3581 /* CoreData */ = {
@@ -195,9 +196,8 @@
 		7139F7F129A7C30E0029347C /* listOfGames */ = {
 			isa = PBXGroup;
 			children = (
-				711F589329F57671003A3581 /* Entity */,
+				711F589329F57671003A3581 /* CoreDataFiles */,
 				7112604929D2203700F7D21B /* MainTabBarController.swift */,
-				7138484029F6C3D300261AA5 /* listOfGames.xcdatamodeld */,
 				7162C90429AD310B0037C813 /* Common */,
 				713AD9E929BF8DF1006B0601 /* Config */,
 				71EB57EC29BCCA7C004A0043 /* Managers */,
@@ -748,8 +748,7 @@
 				7138484129F6C3D300261AA5 /* listOfGames.xcdatamodel */,
 			);
 			currentVersion = 7138484129F6C3D300261AA5 /* listOfGames.xcdatamodel */;
-			name = listOfGames.xcdatamodeld;
-			path = Entity/listOfGames.xcdatamodeld;
+			path = listOfGames.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

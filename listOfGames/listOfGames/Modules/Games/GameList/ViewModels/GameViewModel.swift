@@ -29,12 +29,12 @@ class GameViewModel {
         }
     }
     
-    func checkFavoriteGame(nameOfGames: String) -> Bool {
+    func checkFavoriteGame(gameID: Int) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
         do {
             let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
             for result in results as! [Favorites] {
-                if nameOfGames == result.name {
+                if gameID == Int(result.id) {
                     return true
                 }
             }

@@ -12,7 +12,6 @@ class ScreenshotsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     //MARK: - Methods

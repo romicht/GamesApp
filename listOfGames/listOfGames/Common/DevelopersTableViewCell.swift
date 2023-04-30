@@ -10,11 +10,7 @@ import UIKit
 class DevelopersTableViewCell: UITableViewCell {
     @IBOutlet weak var conteinerView: UIView! {
         didSet {
-            conteinerView.layer.shadowColor = UIColor.darkGray.cgColor
-            conteinerView.layer.shadowOffset = CGSize(width: 1, height: 1)
-            conteinerView.layer.shadowRadius = 5
-            conteinerView.layer.shadowOpacity = 0.3
-            conteinerView.layer.cornerRadius = 5
+            conteinerView.layer.cornerRadius = 10
         }
     }
     

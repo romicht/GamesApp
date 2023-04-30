@@ -26,7 +26,6 @@ class NetworkingManagers {
         request.httpMethod = "Get"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.dataTask(with: request) { data, response, error in
-            // Validation
             if error != nil {
                 errorHandler(.netWorkError)
             }
@@ -34,7 +33,6 @@ class NetworkingManagers {
                 print("something went wrong")
                 return
             }
-            //Convert data to models/some object
             var json: List?
             do {
                 json = try JSONDecoder().decode(List.self, from: data)
@@ -46,7 +44,6 @@ class NetworkingManagers {
             guard let gameList = json else {
                 return
             }
-//            print(gameList.next)
             let results = gameList.results
             completion(results)
             self.numberOfPageGames += 1
@@ -59,7 +56,6 @@ class NetworkingManagers {
         request.httpMethod = "Get"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.dataTask(with: request) { data, response, error in
-            // Validation
             if error != nil {
                 errorHandler(.netWorkError)
             }
@@ -67,7 +63,6 @@ class NetworkingManagers {
                 print("something went wrong")
                 return
             }
-            //Convert data to models/some object
             var json: DevelopersList?
             do {
                 json = try JSONDecoder().decode(DevelopersList.self, from: data)

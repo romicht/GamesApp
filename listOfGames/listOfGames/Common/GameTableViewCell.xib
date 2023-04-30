@@ -18,12 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="138"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-na-fox">
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-na-fox">
                         <rect key="frame" x="5" y="5" width="319" height="128"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5l-pa-ztQ">
-                        <rect key="frame" x="274" y="53.5" width="50" height="31"/>
+                        <rect key="frame" x="274" y="52" width="50" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="RRf-jd-c9C"/>
                         </constraints>
@@ -31,6 +31,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain">
                             <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="addToFavorites:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lVc-Xj-hwP"/>
@@ -77,6 +78,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="uBZ-it-ec4" firstAttribute="leading" secondItem="ojz-na-fox" secondAttribute="leadingMargin" constant="1" id="3ro-NM-udN"/>
                     <constraint firstItem="Qvw-sv-llx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4Yc-6y-q1e"/>
@@ -113,8 +115,8 @@
     </objects>
     <resources>
         <image name="star" catalog="system" width="128" height="116"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

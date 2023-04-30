@@ -19,6 +19,7 @@ class MainTabBarController: UITabBarController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         generateVCs()
         generateNC()

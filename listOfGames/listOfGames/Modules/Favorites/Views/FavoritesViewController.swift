@@ -8,6 +8,11 @@
 import UIKit
 import CoreData
 
+protocol TableViewCellDelegate: AnyObject {
+    func showAlert(text: String)
+    func reloadTableData()
+}
+
 class FavoritesViewController: UIViewController {
     
     //MARK: - Properties
@@ -26,11 +31,23 @@ class FavoritesViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Delete all", for: .normal)
+        button.backgroundColor = .orange
+        button.addTarget(self, action: #selector(self.buttonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 10
+        return button
+    }()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.addSubview(gametableView)
+        self.view.addSubview(deleteButton)
         constraint()
         setupActiveIndicator()
         self.activityIndicator.startAnimating()
@@ -48,13 +65,20 @@ class FavoritesViewController: UIViewController {
         self.viewModel.fetchFavoritesGame { [weak self] results in
             self?.model = results
             self?.gametableView.reloadData()
-            print("Данные из core data загружены")
         }
     }
     
     private func constraint() {
         self.gametableView.snp.updateConstraints { (make) in
             make.top.left.right.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(150)
+        }
+        
+        self.deleteButton.snp.updateConstraints { (make) in
+            make.top.equalTo(self.gametableView.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(100)
+            make.bottom.equalToSuperview().inset(100)
+            make.height.equalTo(50)
         }
     }
     
@@ -65,17 +89,41 @@ class FavoritesViewController: UIViewController {
         activityIndicator.color = UIColor.red
         self.view.addSubview(activityIndicator)
     }
+    
+    @objc func buttonPressed() {
+        let alertController = UIAlertController(title: "Удалить все из избранного?", message: "", preferredStyle: .alert)
+        let actionYes = UIAlertAction(title: "Да", style: .default) { [weak self] _ in
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+            do {
+                let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
+                for result in results as! [Favorites] {
+                        CoreDataManagers.instance.context.delete(result)
+                    }
+            } catch {
+                print(error)
+            }
+            CoreDataManagers.instance.saveContext()
+            self?.viewWillAppear(true)
+        }
+        let actionNo = UIAlertAction(title: "Отмена", style: .destructive) { _ in
+            return
+        }
+            alertController.addAction(actionYes)
+            alertController.addAction(actionNo)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Extension
-extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-    
+extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, TableViewCellDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = gametableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifire, for: indexPath) as! GameTableViewCell
+        cell.delegate = self
         let view = UIView()
         view.backgroundColor = UIColor.clear
         cell.selectedBackgroundView = view
@@ -109,14 +157,17 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let gameDescriptionVC = GameDescriptionViewController()
-//        gameDescriptionVC.model = viewModel.gamesVM[indexPath.row]
-//        navigationController?.pushViewController(gameDescriptionVC, animated: true)
+
+    func showAlert(text: String) {
+        let alertController = UIAlertController(title: "", message: text, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default) {_ in
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func reloadTableData() {
+        viewWillAppear(true)
     }
 }
 
