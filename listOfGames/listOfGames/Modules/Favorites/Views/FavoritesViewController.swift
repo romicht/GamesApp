@@ -31,7 +31,6 @@ class FavoritesViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
     private lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.setTitle("Delete all", for: .normal)
@@ -40,6 +39,13 @@ class FavoritesViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 10
         return button
+    }()
+    var fetchResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constansts.entity)
+        let sortDescriptor = NSSortDescriptor(key: Constansts.sortName, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManagers.instance.context, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultController
     }()
 
     // MARK: - Life cycle
@@ -52,6 +58,12 @@ class FavoritesViewController: UIViewController {
         setupActiveIndicator()
         self.activityIndicator.startAnimating()
         self.view.isUserInteractionEnabled = false
+        
+        do {
+            try fetchResultController.performFetch()
+        } catch {
+            print(error)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,7 +169,25 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
-
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+            do {
+                let results = try CoreDataManagers.instance.context.fetch(fetchRequest)
+                CoreDataManagers.instance.context.delete(results[indexPath.row] as! Favorites)
+            } catch {
+                print(error)
+            }
+            CoreDataManagers.instance.saveContext()
+            viewWillAppear(true)
+        }
+    }
+  
+    
     func showAlert(text: String) {
         let alertController = UIAlertController(title: "", message: text, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ок", style: .default) {_ in
@@ -170,4 +200,5 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource, U
         viewWillAppear(true)
     }
 }
+
 
